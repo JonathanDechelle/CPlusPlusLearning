@@ -1,39 +1,21 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
-void DisplayMessage(string aMessage)
-{
-	cout << aMessage;
-}
-
-void DisplayMessage(string aMessage, bool aEndOfFile)
-{
-	if(!aEndOfFile)
-	{
-		DisplayMessage(aMessage);
-		return;
-	}
-
-	cout << aMessage << endl;
-}
+#include "InputOutput.h"
 
 void GuessMyNumberExercice()
 {
 	int answer = 7;
-	int guess;
+	int guess = 0;
 
 	bool foundGuess = false;
 	while(!foundGuess)
 	{
 		DisplayMessage("Guess the number : ");
-		cin >> guess;
+		guess = InputMessage(guess); 
 
-		if(guess > 7)
+		if(guess > answer)
 		{
 			DisplayMessage("The number is too high", true);
 		}
-		else if(guess < 7)
+		else if(guess < answer)
 		{
 			DisplayMessage("The number is too low", true);
 		}
@@ -44,7 +26,7 @@ void GuessMyNumberExercice()
 		}
 	}
 
-	cin >> guess;
+	guess = InputMessage(guess);
 }
 
 int main()
