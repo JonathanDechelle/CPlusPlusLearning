@@ -39,4 +39,6 @@
 *.vcxproj
 *.ilk
 *.pdb
-/Debug
+Debug
+*.filters
+*.user
