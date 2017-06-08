@@ -1,25 +1,60 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
+
+void DisplayEndOfLine()
+{
+	cout << endl;
+}
 
 void DisplayMessage(string aMessage)
 {
 	cout << aMessage;
 }
 
-void DisplayMessage(string aMessage, bool aEndOfFile)
+void DisplayMessage(int aMessage)
 {
-	if(!aEndOfFile)
-	{
-		DisplayMessage(aMessage);
-		return;
-	}
+	cout << aMessage;
+}
 
-	cout << aMessage << endl;
+void DisplayMessage(vector<string> aMessages)
+{
+	int count = aMessages.size();
+	for(int i = 0; i < count; i++)
+	{
+		DisplayMessage(aMessages[i]);
+		DisplayMessage(" ");
+	}
+}
+
+//TODO refactor
+void DisplayMessage(vector<int> aMessages)
+{
+	int count = aMessages.size();
+	for(int i = 0; i < count; i++)
+	{
+		DisplayMessage(aMessages[i]);
+		DisplayMessage(" ");
+	}
 }
 
 int InputMessage(int aMessage)
 {
 	cin >> aMessage;
 	return aMessage;
+}
+
+string InputMessage(string aMessage)
+{
+	cin >> aMessage;
+	return aMessage;
+}
+
+void Wait()
+{
+	cout << "Wait input .... ";
+
+	string lol = "";
+	cin >> lol;
 }

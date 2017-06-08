@@ -13,15 +13,18 @@ void GuessMyNumberExercice()
 
 		if(guess > answer)
 		{
-			DisplayMessage("The number is too high", true);
+			DisplayMessage("The number is too high");
+			DisplayEndOfLine();
 		}
 		else if(guess < answer)
 		{
-			DisplayMessage("The number is too low", true);
+			DisplayMessage("The number is too low");
+			DisplayEndOfLine();
 		}
 		else
 		{
-			DisplayMessage("The number is correct", true);
+			DisplayMessage("The number is correct");
+			DisplayEndOfLine();
 			foundGuess = true;
 		}
 	}
